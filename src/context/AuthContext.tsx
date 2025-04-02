@@ -47,7 +47,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           id: "user1",
           name: "John Doe",
           phone,
-          role: phone === "1234567890" ? "admin" : "user", // Demo: specific number for admin
+          // Set admin role for specific phone numbers
+          role: phone === "+91 8309285636" || phone === "1234567890" ? "admin" : "user",
           height: 175,
           weight: 70,
           attendance: ["2023-09-01", "2023-09-03", "2023-09-05"],
