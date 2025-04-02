@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Fitness theme colors
+				fitness: {
+					primary: '#0284c7', // sky-600
+					secondary: '#0ea5e9', // sky-500
+					accent: '#38bdf8', // sky-400
+					dark: '#0c4a6e', // sky-900
+					light: '#e0f2fe', // sky-100
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,19 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-light': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-light': 'pulse-light 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+			},
+			backgroundImage: {
+				'gradient-fitness': 'linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)',
 			}
 		}
 	},
