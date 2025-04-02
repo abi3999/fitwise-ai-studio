@@ -63,13 +63,14 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Fitness theme colors
-				fitness: {
-					primary: '#0284c7', // sky-600
-					secondary: '#0ea5e9', // sky-500
-					accent: '#38bdf8', // sky-400
-					dark: '#0c4a6e', // sky-900
-					light: '#e0f2fe', // sky-100
+				// Red and black theme colors
+				redblack: {
+					primary: '#ea384c', // bright red
+					secondary: '#b91c1c', // darker red
+					accent: '#f87171', // light red
+					dark: '#000000', // black
+					darkgray: '#222222', // dark gray
+					light: '#f8f8f8', // near white for contrast
 				}
 			},
 			borderRadius: {
@@ -97,15 +98,21 @@ export default {
 				'pulse-light': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.8' },
+				},
+				'scale-up': {
+					'0%': { transform: 'scale(1)' },
+					'100%': { transform: 'scale(1.05)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'pulse-light': 'pulse-light 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+				'pulse-light': 'pulse-light 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'scale-up': 'scale-up 0.2s ease-out forwards'
 			},
 			backgroundImage: {
 				'gradient-fitness': 'linear-gradient(135deg, #0284c7 0%, #38bdf8 100%)',
+				'gradient-redblack': 'linear-gradient(135deg, #ea384c 0%, #b91c1c 100%)',
 			}
 		}
 	},
