@@ -32,7 +32,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // In a real app, check for stored tokens and validate session
     const storedUser = localStorage.getItem("fitwiseUser");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (error) {
+        console.error("Error parsing stored user data:", error);
+        localStorage.removeItem("fitwiseUser");
+      }
     }
     setIsLoading(false);
   }, []);
@@ -74,7 +79,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (user) {
       const updatedUser = { ...user, ...userData };
       setUser(updatedUser);
+      // Persist to localStorage to make changes permanent
       localStorage.setItem("fitwiseUser", JSON.stringify(updatedUser));
+      console.log("User data updated and saved:", updatedUser);
     }
   };
 
