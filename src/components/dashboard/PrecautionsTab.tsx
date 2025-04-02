@@ -1,11 +1,10 @@
-
 import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/context/AuthContext";
 import { getSafetyTips, chatWithAI } from "@/services/aiService";
-import { AlertTriangle, MessageSquare, Send, Shield, HeartCrack, BandAid } from "lucide-react";
+import { AlertTriangle, MessageSquare, Send, Shield, HeartCrack, Stethoscope } from "lucide-react";
 
 interface Message {
   role: "user" | "assistant";
@@ -67,7 +66,7 @@ const PrecautionsTab: React.FC = () => {
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case "Muscle Recovery":
-        return <BandAid className="h-5 w-5 text-blue-500" />;
+        return <Stethoscope className="h-5 w-5 text-blue-500" />;
       case "Cravings Management":
         return <HeartCrack className="h-5 w-5 text-red-500" />;
       case "Injury Prevention":
