@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -71,7 +70,13 @@ export default {
 					dark: '#000000', // black
 					darkgray: '#222222', // dark gray
 					light: '#f8f8f8', // near white for contrast
-				}
+				},
+				// Royal blue
+				'royal-blue': '#1a3ca1',
+				// Dark mode background colors
+				dark: '#121212',
+				'dark-gray': '#1e1e1e',
+				'dark-light': '#2d2d2d',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
